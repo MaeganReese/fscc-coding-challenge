@@ -1,0 +1,27 @@
+#Server configuration
+server:
+  port: 8761
+
+#Application info  
+info:
+  application:
+    name: Discovery Service
+    description: Discovery Service
+
+#Spring congiguration
+spring:
+  application:
+    name: disovery-service
+ 
+ #Eureka service discovery configuration   
+eureka: 
+  instance:
+    hostname: disovery-service
+  client:
+  #eureka server will not register with any other eureka server
+    register-with-eureka: false
+    #eureka server will not fetch the service regisry from another eureka server
+    fetch-registry: false
+  server:
+  #no wait time when the server is synching with an empty registry
+    wait-time-in-ms-when-sync-empty: 0

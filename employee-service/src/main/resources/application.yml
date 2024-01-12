@@ -1,0 +1,62 @@
+#Server configuration
+server:
+  port: 8081
+
+#Application info
+info:
+  application:
+    name: Employee Service
+    description: Employee Service
+
+#Spring configuration
+spring:
+  application:
+    name: employee-service
+  main:
+    web-application-type: reactive
+  
+  #MySQL Configuration
+  datasource:
+    url: jdbc:mysql://employee-db:3307/employeedb
+    username: ${USERNAME}
+    password: ${PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  
+  #Hibernate properties  
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    generate-ddl: true
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+  #disable compatibility check with spring cloud
+  cloud:
+    compatibility-verifier:
+      enabled: false
+  # Eureka service discovery configuration
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+#Actuator configuration
+management:
+  info:
+    env:
+      enabled: true
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+#JWT Properties  
+jwt:
+  public:
+    key: ${PUBLIC_KEY}   
