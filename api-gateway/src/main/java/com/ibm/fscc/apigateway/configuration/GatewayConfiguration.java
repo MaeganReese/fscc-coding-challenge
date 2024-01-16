@@ -24,11 +24,11 @@ public class GatewayConfiguration {
 	public RouteLocator routeLocator(RouteLocatorBuilder builder) {
 		return builder.routes()
 				.route("login_route", r -> r.path("/api/login/**")
-                        .uri("http://login-service:8080"))
+                        .uri("http://localhost:8080"))
 				.route("employee_route", r -> r.path("/api/employee/**")
-						.uri("http://employee-service:8081"))
+						.uri("http://localhost:8081"))
 				.route("discovery_route", r -> r.path("/eureka/**")
-                        .uri("http://discovery-service:8761"))
+                        .uri("http://localhost:8761"))
 				.build();
 	}
 }

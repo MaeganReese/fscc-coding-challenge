@@ -37,5 +37,5 @@ spring:
 #jwt keys   
 jwt:
   public:
-    key: classpath:/certs/public.pem         
+    key: classpath:/certs/public.pem       
           

@@ -17,9 +17,9 @@ spring:
   
   #MySQL Configuration  
   datasource:
-    url: jdbc:mysql://login-db:3306/logindb
-    username: ${USERNAME}
-    password: ${PASSWORD}
+    url: jdbc:mysql://localhost:3306/logindb
+    username: root
+    password: Sk@ting@23
     driver-class-name: com.mysql.cj.jdbc.Driver
   
   #Hibernate properties  
@@ -60,8 +60,8 @@ management:
 #JWT properties  
 jwt:
   public:
-    key: ${PUBLIC_KEY}  
+    key: classpath:/certs/public.pem
   private: 
-    key: ${PRIVATE_KEY}
+    key: classpath:/certs/private.pem
   expiration:
     time: 5000000

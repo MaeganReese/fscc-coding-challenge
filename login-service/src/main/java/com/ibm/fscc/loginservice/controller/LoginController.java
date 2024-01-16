@@ -1,12 +1,10 @@
 package com.ibm.fscc.loginservice.controller;
 
 import com.ibm.fscc.loginservice.dto.LoginRequest;
-import com.ibm.fscc.loginservice.dto.LoginResponse;
 import com.ibm.fscc.loginservice.dto.RefreshTokenRequest;
 import com.ibm.fscc.loginservice.service.LoginService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
